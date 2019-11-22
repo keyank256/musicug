@@ -1,0 +1,58 @@
+
+ 
+@import 'https://fonts.googleapis.com/css?family=Lato';
+
+* {
+	outline: none;
+}
+
+body {
+	background: #343436;
+	font-family: 'Lato';
+}
+
+/*👇 for preload play/pause svg 😎*/
+body:after {
+  position: absolute;
+  content: "";
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/163884/pause.svg) no-repeat;
+  width: 13px;
+  height: 22px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  transition: all 100ms linear;
+  pointer-events: none;
+}
+​
+.mejs-controls .mejs-time-rail .mejs-time-total {
+  background: #292929;
+}
+​
+.mejs-controls .mejs-time-rail .mejs-time-loaded {
+  background: #3c3838;
+  background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, rgba(255, 255, 255, .2)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .2)), color-stop(.75, rgba(255, 255, 255, .2)), color-stop(.75, transparent), to(transparent));
+  background-image: -moz-linear-gradient( -45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+  background-size: 50px 50px;
+  animation: move 3s linear infinite;
+  opacity: 0.1;
+}
+​
+.mejs-controls .mejs-time-rail .mejs-time-current {
+  background: linear-gradient(to right, #03A9F4, #ff00ff);
+}
+​
+.mejs-controls .mejs-button button:focus {
+  outline: none;
+}
+​
+@-webkit-keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
